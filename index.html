@@ -1,0 +1,713 @@
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rumah Adat Tasikmalaya</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+
+
+body{
+    background:#f4f8f2;
+    color:#333;
+    transition:.3s;
+}
+
+
+
+
+header{
+    background:#2E7D32;
+    color:white;
+    padding:15px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:999;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:25px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#FFD54F;
+}
+
+
+
+
+.hero{
+    height:100vh;
+
+    background:url("rumah-adat.jpg");
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    color:white;
+
+    padding:30px;
+
+    position:relative;
+}
+
+.hero::before{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,.55);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.hero h1{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:20px;
+    margin-bottom:25px;
+}
+
+
+
+button{
+    padding:15px 35px;
+
+    border:none;
+
+    background:#FFD54F;
+
+    font-size:18px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    transition:.4s;
+}
+
+button:hover{
+    background:#FFA000;
+    transform:scale(1.05);
+}
+
+
+
+section{
+    padding:90px 10%;
+}
+
+section h2{
+    text-align:center;
+
+    margin-bottom:30px;
+
+    font-size:35px;
+
+    color:#2E7D32;
+}
+
+
+.card{
+    background:white;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+    margin-bottom:25px;
+
+    transition:.3s;
+
+    line-height:1.8;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+
+
+.grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:20px;
+}
+
+
+.gallery img{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.gallery img:hover{
+
+    transform:scale(1.05);
+
+    opacity:.85;
+
+}
+
+
+
+footer{
+
+    background:#1B5E20;
+
+    color:white;
+
+    text-align:center;
+
+    padding:20px;
+
+}
+
+
+
+.dark{
+
+    background:#222;
+
+    color:white;
+
+}
+
+.dark .card,
+.dark .quiz{
+
+    background:#333;
+
+    color:white;
+
+}
+
+.dark header{
+
+    background:#111;
+
+}
+
+.dark footer{
+
+    background:black;
+
+}
+
+.dark section h2{
+
+    color:#81C784;
+
+}
+
+.dark #hasil{
+
+    color:#81C784;
+
+}
+
+
+
+
+#topBtn{
+
+    position:fixed;
+
+    bottom:25px;
+
+    right:25px;
+
+    padding:15px;
+
+    border-radius:50%;
+
+    display:none;
+
+    font-size:18px;
+
+    z-index:999;
+
+}
+
+
+
+
+@media(max-width:768px){
+
+    .hero h1{
+
+        font-size:35px;
+
+    }
+
+    .hero p{
+
+        font-size:16px;
+
+    }
+
+    nav ul{
+
+        display:none;
+
+    }
+
+    .logo{
+
+        font-size:20px;
+
+    }
+
+    .gallery img{
+
+        height:250px;
+
+    }
+
+    .modal img{
+
+        max-width:90%;
+
+        max-height:70vh;
+
+    }
+
+    .prev{
+
+        left:10px;
+
+    }
+
+    .next{
+
+        right:10px;
+
+    }
+
+    .prev,
+    .next{
+
+        width:50px;
+
+        height:50px;
+
+        font-size:24px;
+
+    }
+
+    .close{
+
+        right:20px;
+
+        top:10px;
+
+        font-size:40px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+<header>
+
+    <div class="logo">
+        🏠 Rumah Adat Tasikmalaya
+    </div>
+
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#sejarah">Sejarah</a>
+            </li>
+
+            <li>
+                <a href="#filosofi">Filosofi</a>
+            </li>
+
+            <li>
+                <a href="#galeri">Galeri</a>
+            </li>
+
+            <li>
+                <a href="#kuis">Kuis</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <button onclick="darkMode()">
+        🌙
+    </button>
+
+</header>
+
+
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>
+            Rumah Adat Tasikmalaya
+        </h1>
+
+        <p>
+            Mengenal sejarah, filosofi, serta keindahan
+            arsitektur Rumah Adat Sunda.
+        </p>
+
+        <button
+        onclick="document.getElementById('sejarah').scrollIntoView()">
+
+            Pelajari Sekarang
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<section id="sejarah">
+
+    <h2>
+        Sejarah
+    </h2>
+
+    <div class="card">
+
+          Rumah adat tasikmalaya merupakan bagian budaya dari masyarakat sunda. Rumah ini dirancang untuk menyesuaikan kondisi alam pegunungan yang sejuk serta mencerminkan kehidupan masyarakat yang sederhana, harmonis, dan menghormati alam. Bentuk rumah panggung dipilih untuk menghindari kelembapan tanah, gangguan hewan liar, serta meningkatkan sirkulasi udara. Rumah adat ini juga dibangun menggunakan bahan-bahan alam sepertibambu, kayu, ijuk, dan daun kirai sehingga ramah terhadap lingkungan.
+
+          <br><br> 
+
+         Rumah adat sunda juga ada banyak sekali jenisnya, diantaranya adalah rumah capit gunting, perahu kumureb, badak heuay, jubleg nangkub, tagog anjing, julopong, buka pongpok dan julang ngapak. Rumah yang ada pada background awal web adalah contoh rumah julang ngapak khas kampung naga tasikmalaya. 
+
+    </div>
+
+</section>
+
+
+<section id="filosofi">
+
+    <h2>
+        Filosofi
+    </h2>
+
+    <div class="grid">
+
+
+        <div class="card">
+
+            <h3>
+                Atap Julang Ngapak
+            </h3>
+
+            Melambangkan burung yang sedang
+            mengepakkan sayap sebagai simbol
+            perlindungan dan harapan.
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Rumah Panggung
+            </h3>
+
+            Melambangkan kedekatan manusia
+            dengan alam serta menjaga kebersihan
+            dan keamanan rumah.
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Material Kayu
+            </h3>
+
+            Menggambarkan kesederhanaan,
+            keseimbangan, dan pemanfaatan
+            sumber daya alam secara bijaksana.
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<section id="galeri">
+
+    <h2>
+        Galeri
+    </h2>
+
+
+    <div class="grid gallery">
+
+
+    
+        <img
+        src="rumahadat/badak.jpg"
+        onclick="openImg(0)"
+        >
+
+
+
+        <img
+        src="rumahadat/capitgunting.jpg"
+        onclick="openImg(1)"
+        >
+
+
+
+        <img
+        src="rumahadat/jolopong.jpg"
+        onclick="openImg(2)"
+        >
+
+        <img 
+        src="rumahadat/julangpak.jpg"
+        onclick="openImg(3)"
+        >
+
+        <img 
+        src="rumahadat/parahukumureb.jpg"
+        onclick="openImg(4)"
+        >
+
+        <img 
+        src="rumahadat/tagoganj.jpg"
+        onclick="openImg(5)"
+        >
+
+
+    </div>
+
+</section>
+
+
+
+<footer>
+
+    © 2026 Website Rumah Adat Tasikmalaya
+
+</footer>
+
+<a href="https://www.instagram.com/yffamzk/" target="_blank">
+     <img src="rumahadat/igsfoto.jpg" alt="Instagram" width="40">
+     Klik Ini Kalo Kalian Kepo Siapa Pembuatnya
+</a>
+
+
+
+
+<button
+id="topBtn"
+onclick="topFunction()">
+
+    ⬆
+
+</button>
+
+
+
+<script>
+
+
+
+
+const images = [
+
+    "rumahadat/badak.jpg",
+
+    "rumahadat/capitgunting.jpg",
+
+    "rumahadat/jolopong.jpg"
+
+    "rumahadat/julangpak.jpg"
+
+    "rumahadat/parahukumureb.jpg"
+
+    "rumahadat/tagoganj.jpg"
+
+];
+
+
+let currentIndex = 0;
+
+
+function cekJawaban(){
+
+    let jawaban =
+    document.getElementsByName("jawab");
+
+    let skor = 0;
+
+
+    for(
+        let i = 0;
+        i < jawaban.length;
+        i++
+    ){
+
+        if(jawaban[i].checked){
+
+            skor =
+            parseInt(jawaban[i].value);
+
+        }
+
+    }
+
+
+    document.getElementById("hasil")
+    .innerHTML =
+    "Skor Anda : "
+    + (skor * 100);
+
+}
+
+
+
+
+function darkMode(){
+
+    document.body
+    .classList.toggle("dark");
+
+}
+
+
+
+
+let mybutton =
+document.getElementById("topBtn");
+
+
+window.onscroll = function(){
+
+    if(
+        document.body.scrollTop > 200 ||
+        document.documentElement.scrollTop > 200
+    ){
+
+        mybutton.style.display =
+        "block";
+
+    }
+
+    else{
+
+        mybutton.style.display =
+        "none";
+
+    }
+
+};
+
+
+
+function topFunction(){
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+}
+
+</script>
+
+
+</body>
+
+</html>
